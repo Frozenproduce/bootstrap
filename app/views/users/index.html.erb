@@ -1,0 +1,16 @@
+<% content_for :title do %>
+  <h2>User <small>Listings</small></h2>
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email Address</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'user', collection: @users %>
+  </tbody>
+</table>

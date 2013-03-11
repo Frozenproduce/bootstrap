@@ -1,0 +1,15 @@
+<% content_for :title do %>
+  <h2>Sign Up <small>Request a new account</small></h2>
+<% end %>
+
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.input :first_name, input_html: { class: 'input-block-level' } %>
+  <%= f.input :last_name, input_html: { class: 'input-block-level' } %>
+  <%= f.input :email, input_html: { class: 'input-block-level' } %>
+  <%= f.input :password, input_html: { class: 'input-block-level' } %>
+  <%= f.input :password_confirmation, input_html: { class: 'input-block-level' } %>
+  <%= f.button :submit, 'Sign up', class: 'btn-block btn-primary' %>
+<% end %>
+
+<%= render "links" %>

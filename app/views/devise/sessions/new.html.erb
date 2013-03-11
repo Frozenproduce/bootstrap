@@ -1,0 +1,12 @@
+<% content_for :title do %>
+  <h2>Sign in</h2>
+<% end %>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= f.input :email, input_html: { class: 'input-block-level' } %>
+  <%= f.input :password, input_html: { class: 'input-block-level' } %>
+  <%= f.input(:remember_me, wrapper: :inline_checkbox, as: :boolean) if devise_mapping.rememberable? %>
+  <%= f.button :submit, 'Sign in', class: 'btn-block btn-primary' %>
+<% end %>
+
+<%= render "links" %>

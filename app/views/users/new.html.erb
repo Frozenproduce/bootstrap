@@ -1,0 +1,10 @@
+<% content_for :title do %>
+  <h2>User <small>Invite</small></h2>
+<% end %>
+
+<%= simple_form_for resource, url: invite_users_path, html: { class: 'form-horizontal' } do |f| %>
+  <%= f.input :email %>
+  <div class="form-actions">
+    <%= f.submit 'Invite', class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= render partial: 'layouts/shared/html_head' %>
+  </head>
+  <body>
+
+    <%= render partial: 'layouts/shared/header' %>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span4 offset4">
+          <div class="page-title">
+            <%= yield :title %>
+          </div>
+          <div class="well">
+            <%= bootstrap_flash %>
+            <%= yield %>
+          </div>
+        </div>
+      </div><!--/row-->
+
+      <%= render partial: 'layouts/shared/footer' %>
+
+    </div> <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+    <%= yield :javascript %>
+
+  </body>
+</html>
