@@ -1,7 +1,7 @@
 class DeviseInvitableAddToUsers < ActiveRecord::Migration
   def up
     change_table :users do |t|
-      t.boolean    :active, :default => true
+      t.boolean    :active, :default => false
       t.string     :invitation_token, :limit => 60
       t.datetime   :invitation_sent_at
       t.datetime   :invitation_accepted_at

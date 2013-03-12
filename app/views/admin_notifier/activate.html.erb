@@ -1,0 +1,7 @@
+<p>Hello <%= @administrator.name %>!</p>
+
+<p><%= @user.name %> has just signed up to use <%= Bootstrap.config.page_title %></p>
+
+<p>However they'll need to be activated by an administrator before they can continue</p>
+
+<p>Please sign in and visit the users dashboard to approve them (<%= link_to @user.name, user_url(@user) %>)</p>

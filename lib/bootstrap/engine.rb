@@ -34,6 +34,7 @@ module Bootstrap
     config.after_initialize do |app|
       config.bootstrap.page_title = app.railtie_name.gsub('_application', '').titleize
       config.bootstrap.company = app.railtie_name.gsub('_application', '').titleize
+      SimpleNavigation::config_file_paths.reverse!
     end
 
   end
