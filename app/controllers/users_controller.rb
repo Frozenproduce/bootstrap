@@ -4,6 +4,10 @@ class UsersController < ApplicationController
 
   custom_actions member: [:activate, :suspend], collection: :invite
 
+  def update
+    update! { collection_url }
+  end
+
   def activate
     resource.activate!
     redirect_to users_path, notice: "#{resource.name} activated"

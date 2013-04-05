@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role_ids
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   default_scope order("last_name ASC, first_name ASC")
 
   # Set the user as inactive by default, and ensure that someone has to check who the user is
-  before_create do
-    self.active = true if invited_to_sign_up?
+  after_create do
+    update_attribute(:active, true) if invited_to_sign_up?
   end
 
   after_create do
