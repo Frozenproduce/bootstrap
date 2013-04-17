@@ -2,43 +2,45 @@
 
 Set up:
 
-1. Modify Gemfile 
+- Modify Gemfile 
 
-```
+```ruby
 gem 'bootstrap', github: 'Frozenproduce/bootstrap'
 gem 'simple-navigation-bootstrap'
 gem 'less-rails'
 gem 'therubyracer'
 ```
 
-2. bundle
+- bundle
 
-3. rake bootstrap_engine:install:migrations
+- rake bootstrap_engine:install:migrations
 
-4. bubdle exec rake db:migrate
+- bubdle exec rake db:migrate
 
-5. Update app/assets/javascript/application.js
+- Update app/assets/javascript/application.js
 
-```
+```ruby
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
 ```
 
-6. Update app/assets/stylesheets/application.css
+- Update app/assets/stylesheets/application.css
 
+```ruby
  *= require_self
  *= require bootstrap
  *= require_tree .
+```ruby
 
-7. rails s puma
+- rails s puma
 
-8. /users/sign-up and create user
+- /users/sign-up and create user
 
-7. rails console
+- rails console
 
-```
+```ruby
 u = User.first
 u.active = true
 u.add_roles :admin
