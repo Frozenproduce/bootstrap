@@ -1,4 +1,4 @@
-= Bootstrap
+# Bootstrap
 
 Set up:
 
@@ -32,7 +32,7 @@ gem 'therubyracer'
  *= require_self
  *= require bootstrap
  *= require_tree .
-```ruby
+```
 
 - rails s puma
 
