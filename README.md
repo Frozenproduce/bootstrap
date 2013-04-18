@@ -15,7 +15,7 @@ gem 'therubyracer'
 
 - rake bootstrap_engine:install:migrations
 
-- bubdle exec rake db:migrate
+- bundle exec rake db:migrate
 
 - Update app/assets/javascript/application.js
 
@@ -43,7 +43,7 @@ gem 'therubyracer'
 ```ruby
 u = User.first
 u.active = true
-u.add_roles :admin
+u.add_role :admin
 u.save!
 ```
 
