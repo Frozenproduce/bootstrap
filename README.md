@@ -5,7 +5,7 @@ Set up:
 - Modify Gemfile 
 
 ```ruby
-gem 'bootstrap', github: 'Frozenproduce/bootstrap'
+gem 'bootstrap', github: 'adamcarlile/bootstrap'
 gem 'simple-navigation-bootstrap'
 gem 'less-rails'
 gem 'therubyracer'
