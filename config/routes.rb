@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       post :activate
       post :suspend
     end
+    resource :auth_tokens
   end
 
 end

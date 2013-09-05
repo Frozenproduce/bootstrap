@@ -10,3 +10,16 @@
     <%= f.submit 'Save', class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+<% content_for :support_below do %>
+  <% if resource == current_user %>
+    <%- if resource.authentication_token.blank? %>
+      <%= link_to('New Token', user_auth_tokens_path(resource), class: 'btn btn-primary', method: :post) if can? :update, resource %>
+    <%- else %>
+      <div class='well well-small'>
+        <p><%= resource.authentication_token %>
+      </div>
+      <%= link_to('Delete Token', user_auth_tokens_path(resource), class: 'btn btn-danger', method: :delete) if can? :destroy, resource %>
+    <%- end %>
+  <% end %>
+<% end %>
